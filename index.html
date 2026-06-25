@@ -453,91 +453,100 @@
 
 
   <!-- ══════════════════════════════════════
-       SECCIÓN 2 · SERVICIOS
-  ══════════════════════════════════════ -->
-  <div id="servicios" class="section">
+     SECCIÓN 2 · SERVICIOS
+══════════════════════════════════════ -->
+<div id="servicios" class="section">
 
-    <div class="services-hero">
-      <div class="hero-badge">Lo que hacemos</div>
-      <h2>Nuestros servicios</h2>
-      <p>Diagnóstico, tratamiento y prevención en gastroenterología y medicina interna</p>
+  <!-- Hero -->
+  <div class="services-hero">
+    <div class="hero-badge">Procedimientos especializados</div>
+    <h2>Nuestros servicios</h2>
+    <p>Diagnóstico, tratamiento y prevención en gastroenterología y medicina interna</p>
+  </div>
+
+  <!-- Filtros -->
+  <div class="srv-filtros">
+    <button class="srv-filtro active" onclick="filtrar('todos', this)">Todos</button>
+    <button class="srv-filtro" onclick="filtrar('consulta', this)">Consultas</button>
+    <button class="srv-filtro" onclick="filtrar('procedimiento', this)">Procedimientos</button>
+    <button class="srv-filtro" onclick="filtrar('preventivo', this)">Preventivos</button>
+  </div>
+
+  <!-- Cuadrícula dinámica -->
+  <div class="services-grid" id="services-grid"></div>
+
+  <!-- Enfermedades -->
+  <div class="diseases-section">
+    <h3 class="disease-title">Enfermedades que atendemos</h3>
+    <div class="disease-pills">
+      <span class="disease-pill">Reflujo gastroesofágico</span>
+      <span class="disease-pill">Gastritis</span>
+      <span class="disease-pill">Úlceras digestivas</span>
+      <span class="disease-pill">Helicobacter pylori</span>
+      <span class="disease-pill">Síndrome de intestino irritable</span>
+      <span class="disease-pill">Enfermedad inflamatoria intestinal</span>
+      <span class="disease-pill">Cáncer gástrico</span>
+      <span class="disease-pill">Cáncer colorrectal</span>
+      <span class="disease-pill">Enfermedades hepáticas</span>
+      <span class="disease-pill">Enfermedades pancreáticas</span>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 Unidad Gastroenterológica <span>Duitama</span> · Clínica Tundama</p>
+  </footer>
+</div><!-- /servicios -->
+
+
+<!-- ══════════════════════════════════════
+     MODAL DE SERVICIOS
+══════════════════════════════════════ -->
+<div class="modal-overlay" id="modal-overlay" onclick="cerrarModal(event)">
+  <div class="modal-card">
+
+    <div class="modal-header">
+      <div class="modal-header-icon" id="modal-icon-wrap">
+        <i id="modal-icon" class="ti ti-stethoscope" aria-hidden="true"></i>
+      </div>
+      <div class="modal-header-text">
+        <span class="modal-header-tag" id="modal-tag"></span>
+        <h3 class="modal-title" id="modal-titulo"></h3>
+      </div>
+      <button class="modal-close" onclick="cerrarModal()">
+        <i class="ti ti-x" aria-hidden="true"></i>
+      </button>
     </div>
 
-    <!-- Cuadrícula de servicios -->
-    <div class="services-grid">
+    <div class="modal-body">
+      <p class="modal-desc" id="modal-desc"></p>
 
-      <div class="service-card" onclick="abrirModal('consulta-gastro')">
-        <div class="service-icon-wrap service-icon-wrap--teal"><i class="ti ti-stethoscope" aria-hidden="true"></i></div>
-        <h3>Consulta en gastroenterología</h3>
-        <p>Valoración especializada de enfermedades del sistema digestivo con diagnóstico detallado y plan de manejo personalizado.</p>
+      <div class="modal-meta">
+        <div class="meta-item">
+          <i class="ti ti-clock" aria-hidden="true"></i>
+          <span id="modal-dur"></span>
+        </div>
+        <div class="meta-item">
+          <i class="ti ti-building-hospital" aria-hidden="true"></i>
+          <span>Clínica Tundama, Duitama</span>
+        </div>
+        <div class="meta-item">
+          <i class="ti ti-user-check" aria-hidden="true"></i>
+          <span id="modal-esp"></span>
+        </div>
+        <div class="meta-item">
+          <i class="ti ti-calendar" aria-hidden="true"></i>
+          <span>Con cita previa</span>
+        </div>
       </div>
 
-      <div class="service-card" onclick="abrirModal('consulta-interna')">
-        <div class="service-icon-wrap service-icon-wrap--navy"><i class="ti ti-heart-rate-monitor" aria-hidden="true"></i></div>
-        <h3>Consulta de medicina interna</h3>
-        <p>Atención integral de enfermedades sistémicas con enfoque en la salud general del adulto.</p>
-      </div>
-
-      <div class="service-card" onclick="abrirModal('endoscopia')">
-        <div class="service-icon-wrap service-icon-wrap--teal"><i class="ti ti-camera" aria-hidden="true"></i></div>
-        <h3>Endoscopia digestiva alta</h3>
-        <p>Estudio del esófago, estómago y duodeno mediante endoscopio flexible para detectar lesiones y tomar biopsias.</p>
-      </div>
-
-      <div class="service-card" onclick="abrirModal('colonoscopia')">
-        <div class="service-icon-wrap service-icon-wrap--navy"><i class="ti ti-search" aria-hidden="true"></i></div>
-        <h3>Colonoscopia diagnóstica y preventiva</h3>
-        <p>Evaluación del colon para detección temprana de pólipos y cáncer colorrectal. Indicada para control de rutina.</p>
-      </div>
-
-      <div class="service-card" onclick="abrirModal('polipectomia')">
-        <div class="service-icon-wrap service-icon-wrap--teal"><i class="ti ti-cut" aria-hidden="true"></i></div>
-        <h3>Polipectomía</h3>
-        <p>Resección de pólipos durante la colonoscopia para prevenir el desarrollo de cáncer de colon.</p>
-      </div>
-
-      <div class="service-card" onclick="abrirModal('balon')">
-        <div class="service-icon-wrap service-icon-wrap--gold"><i class="ti ti-scale" aria-hidden="true"></i></div>
-        <h3>Balón gástrico</h3>
-        <p>Alternativa no quirúrgica para el manejo integral del sobrepeso y la obesidad. Procedimiento endoscópico ambulatorio.</p>
-      </div>
-
-      <div class="service-card" onclick="abrirModal('prueba-aliento')">
-        <div class="service-icon-wrap service-icon-wrap--navy"><i class="ti ti-flask" aria-hidden="true"></i></div>
-        <h3>Prueba de aliento</h3>
-        <p>Detección de <em>Helicobacter pylori</em> y otras alteraciones digestivas de forma no invasiva y rápida.</p>
-      </div>
-
-      <div class="service-card" onclick="abrirModal('biopsias')">
-        <div class="service-icon-wrap service-icon-wrap--teal"><i class="ti ti-microscope" aria-hidden="true"></i></div>
-        <h3>Toma de biopsias digestivas</h3>
-        <p>Evaluación de lesiones gastrointestinales con toma de muestras para análisis patológico especializado.</p>
-      </div>
-
-    </div><!-- /services-grid -->
-
-    <!-- Enfermedades -->
-    <div class="diseases-section">
-      <h3 class="disease-title">Enfermedades que atendemos</h3>
-      <div class="disease-pills">
-        <span class="disease-pill">Reflujo gastroesofágico</span>
-        <span class="disease-pill">Gastritis</span>
-        <span class="disease-pill">Úlceras digestivas</span>
-        <span class="disease-pill">Helicobacter pylori</span>
-        <span class="disease-pill">Síndrome de intestino irritable</span>
-        <span class="disease-pill">Enfermedad inflamatoria intestinal</span>
-        <span class="disease-pill">Cáncer gástrico</span>
-        <span class="disease-pill">Cáncer colorrectal</span>
-        <span class="disease-pill">Enfermedades hepáticas</span>
-        <span class="disease-pill">Enfermedades pancreáticas</span>
-      </div>
+      <button class="modal-cta" onclick="irAgendar()">
+        <i class="ti ti-brand-whatsapp" aria-hidden="true"></i>
+        Agendar este servicio
+      </button>
     </div>
 
-    <footer class="footer">
-      <p>© 2025 Unidad Gastroenterológica <span>Duitama</span> · Clínica Tundama</p>
-    </footer>
-  </div><!-- /servicios -->
-
+  </div>
+</div>
 
   <!-- ══════════════════════════════════════
        SECCIÓN 3 · AGENDAMIENTO
