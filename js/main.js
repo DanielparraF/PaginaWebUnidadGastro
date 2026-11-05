@@ -269,10 +269,20 @@ var instalacionesFotos = [
 ];
 
 var instalacionesVideos = [
-  // { tipo: 'archivo', src: 'assets/video/recorrido.mp4', poster: 'assets/img/recorrido.jpg', titulo: 'Recorrido por la unidad' },
-  // { tipo: 'youtube', id: 'XXXXXXXXXXX', titulo: 'Conoce la unidad' }
-  { src: 'assets/video/Final Video Unidad.mp4', titulo: 'Instalaciones de la unidad Nuevas' },
-  { src: 'assets/video/videl def.mp4', titulo: 'reacondicionamiento de Instalaciones' },
+  {
+    tipo: 'youtube',
+    id: '63TDT1czv60',
+    vertical: true,
+    poster: 'assets/img/DSC_5933.jpg',
+    titulo: 'Recorrido por la unidad'
+  },
+  {
+    tipo: 'youtube',
+    id: 'cfgMZIGMOws',
+    vertical: true,
+    poster: 'assets/img/DSC_5950.jpg',
+    titulo: 'Conoce nuestras instalaciones'
+  }
 ];
 
 var lbItems = [];
@@ -320,6 +330,7 @@ function renderInstalaciones() {
       '<span class="inst-item-cap">' + escapeHtml(v.titulo) + '</span>';
     gv.appendChild(b);
   });
+  gv.classList.toggle('inst-videos--vertical', instalacionesVideos.some(function(v) { return v.vertical; }));
 
   rellenarPlaceholders(gf, instalacionesFotos.length, 3, 'ti-photo', 'Foto próximamente');
   rellenarPlaceholders(gv, instalacionesVideos.length, 2, 'ti-video', 'Video próximamente');

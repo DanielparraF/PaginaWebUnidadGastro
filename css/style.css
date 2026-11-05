@@ -1952,3 +1952,11 @@ body {
   .cta-final-actions { flex-direction: column; }
   .cta-final-actions .btn-wa, .cta-final-actions .btn-ghost { justify-content: center; width: 100%; }
 }
+
+/* Cuadrícula cuando los videos son verticales */
+.inst-videos--vertical { grid-template-columns: repeat(auto-fill, 280px); gap: var(--gap-lg); }
+
+@media (max-width: 480px) {
+  .inst-videos--vertical { grid-template-columns: 1fr; }
+  .inst-videos--vertical .inst-item--vertical { justify-self: center; width: 100%; }
+}
