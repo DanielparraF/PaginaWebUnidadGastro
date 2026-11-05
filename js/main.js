@@ -20,6 +20,7 @@ function showSection(id, btn) {
     t.classList.remove('active');
   });
   document.getElementById(id).classList.add('active');
+  if (!btn) btn = document.querySelector('.nav-tab[data-section="' + id + '"]');
   if (btn) btn.classList.add('active');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
@@ -165,10 +166,10 @@ var serviciosData = [
 ];
 
 /* Renderiza las tarjetas en el grid */
-function renderServicios(lista) {
-  var grid = document.getElementById('services-grid');
+function renderServicios(lista, gridId) {
+  var grid = document.getElementById(gridId || 'services-grid');
   if (!grid) return;
-  grid.innerHTML = '';
+  grid.innerHTML = '';            // ← limpia antes de dibujar (esta es la clave)
 
   lista.forEach(function(s) {
     var card = document.createElement('div');
@@ -235,7 +236,7 @@ function cerrarModal(e) {
 function irAgendar() {
   document.getElementById('modal-overlay').classList.remove('active');
   document.body.style.overflow = '';
-  showSection('agendamiento', document.querySelectorAll('.nav-tab')[3]);
+  showSection('agendamiento');
 }
 
 /* Cerrar con Escape */
@@ -246,7 +247,174 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
-/* Inicializar servicios al cargar */
+/* ============================================================
+   5. INSTALACIONES — GALERÍA
+   Para agregar contenido, edita solo estas dos listas.
+   FOTOS:  { src: 'ruta/foto.jpg', titulo: 'Texto' }
+   VIDEOS: { tipo: 'archivo', src: 'assets/video/x.mp4', poster: 'assets/img/x.jpg', titulo: '...' }
+           { tipo: 'youtube', id: 'ID_DEL_VIDEO', titulo: '...' }   (ID = lo que va después de "v=")
+============================================================ */
+
+var instalacionesFotos = [
+  { src: 'assets/img/Foto procedimientos.JPG', titulo: 'Equipo Médico' },
+  { src: 'assets/img/DSC_5933.jpg', titulo: 'Logo' },
+  { src: 'assets/img/DSC_5935.jpg', titulo: 'Sala de espera' },
+  { src: 'assets/img/DSC_6077.jpg', titulo: 'Hall' },
+  { src: 'assets/img/DSC_5950.jpg', titulo: 'Puesto de recepción' },
+  { src: 'assets/img/DSC_5960.jpg', titulo: 'Consultorio 1' },
+  { src: 'assets/img/DSC_5975.jpg', titulo: 'Sala de procedimientos endoscópicos' },
+  { src: 'assets/img/DSC_5988.jpg', titulo: 'Sala de procedimientos colonoscópicos' },
+  { src: 'assets/img/DSC_6001.jpg', titulo: 'Sala de recuperación' },
+
+];
+
+var instalacionesVideos = [
+  // { tipo: 'archivo', src: 'assets/video/recorrido.mp4', poster: 'assets/img/recorrido.jpg', titulo: 'Recorrido por la unidad' },
+  // { tipo: 'youtube', id: 'XXXXXXXXXXX', titulo: 'Conoce la unidad' }
+  { src: 'assets/video/Final Video Unidad.mp4', titulo: 'Instalaciones de la unidad Nuevas' },
+  { src: 'assets/video/videl def.mp4', titulo: 'reacondicionamiento de Instalaciones' },
+];
+
+var lbItems = [];
+var lbIndex = 0;
+
+function escapeHtml(t) {
+  return String(t).replace(/[&<>"']/g, function(c) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+  });
+}
+
+function renderInstalaciones() {
+  var gf = document.getElementById('inst-fotos');
+  var gv = document.getElementById('inst-videos');
+  if (!gf || !gv) return;
+  gf.innerHTML = '';
+  gv.innerHTML = '';
+  lbItems = [];
+
+  instalacionesFotos.forEach(function(f) {
+    var idx = lbItems.push({ tipo: 'foto', src: f.src, titulo: f.titulo }) - 1;
+    var b = document.createElement('button');
+    b.className = 'inst-item';
+    b.type = 'button';
+    b.onclick = function() { abrirLightbox(idx); };
+    b.innerHTML =
+      '<img src="' + escapeHtml(f.src) + '" alt="' + escapeHtml(f.titulo) + '" loading="lazy" />' +
+      '<span class="inst-item-cap">' + escapeHtml(f.titulo) + '</span>' +
+      '<span class="inst-item-zoom"><i class="ti ti-zoom-in" aria-hidden="true"></i></span>';
+    gf.appendChild(b);
+  });
+
+  instalacionesVideos.forEach(function(v) {
+    var idx = lbItems.push(v) - 1;
+    var thumb = v.tipo === 'youtube'
+      ? 'https://img.youtube.com/vi/' + v.id + '/hqdefault.jpg'
+      : (v.poster || '');
+    var b = document.createElement('button');
+    b.className = 'inst-item inst-item--video';
+    b.type = 'button';
+    b.onclick = function() { abrirLightbox(idx); };
+    b.innerHTML =
+      (thumb ? '<img src="' + escapeHtml(thumb) + '" alt="' + escapeHtml(v.titulo) + '" loading="lazy" />' : '') +
+      '<span class="inst-play"><i class="ti ti-player-play-filled" aria-hidden="true"></i></span>' +
+      '<span class="inst-item-cap">' + escapeHtml(v.titulo) + '</span>';
+    gv.appendChild(b);
+  });
+
+  rellenarPlaceholders(gf, instalacionesFotos.length, 3, 'ti-photo', 'Foto próximamente');
+  rellenarPlaceholders(gv, instalacionesVideos.length, 2, 'ti-video', 'Video próximamente');
+}
+
+function rellenarPlaceholders(grid, actuales, minimo, icono, texto) {
+  for (var i = actuales; i < minimo; i++) {
+    var ph = document.createElement('div');
+    ph.className = 'inst-item inst-item--placeholder';
+    ph.innerHTML = '<i class="ti ' + icono + '" aria-hidden="true"></i><span>' + texto + '</span>';
+    grid.appendChild(ph);
+  }
+}
+
+function abrirLightbox(i) {
+  lbIndex = i;
+  pintarLightbox();
+  var lb = document.getElementById('lightbox');
+  lb.classList.add('active');
+  lb.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function pintarLightbox() {
+  var it = lbItems[lbIndex];
+  var html = '';
+  if (it.tipo === 'foto') {
+    html = '<img src="' + escapeHtml(it.src) + '" alt="' + escapeHtml(it.titulo) + '" />';
+  } else if (it.tipo === 'youtube') {
+    html = '<iframe src="https://www.youtube-nocookie.com/embed/' + encodeURIComponent(it.id) +
+           '?autoplay=1&rel=0" title="' + escapeHtml(it.titulo) +
+           '" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+  } else {
+    html = '<video src="' + escapeHtml(it.src) + '" controls autoplay playsinline></video>';
+  }
+  document.getElementById('lightbox-stage').innerHTML = html;
+  document.getElementById('lightbox-caption').textContent = it.titulo || '';
+  var solo = lbItems.length < 2;
+  document.querySelector('.lightbox-prev').style.display = solo ? 'none' : '';
+  document.querySelector('.lightbox-next').style.display = solo ? 'none' : '';
+}
+
+function navLightbox(dir, e) {
+  if (e) e.stopPropagation();
+  lbIndex = (lbIndex + dir + lbItems.length) % lbItems.length;
+  pintarLightbox();
+}
+
+function cerrarLightbox(e) {
+  if (e && e.target.id !== 'lightbox' && !e.target.closest('.lightbox-close')) return;
+  var lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('active')) return;
+  lb.classList.remove('active');
+  lb.setAttribute('aria-hidden', 'true');
+  document.getElementById('lightbox-stage').innerHTML = '';   // detiene el video
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (!document.getElementById('lightbox').classList.contains('active')) return;
+  if (e.key === 'Escape')     cerrarLightbox();
+  if (e.key === 'ArrowLeft')  navLightbox(-1);
+  if (e.key === 'ArrowRight') navLightbox(1);
+});
+
 document.addEventListener('DOMContentLoaded', function() {
   renderServicios(serviciosData);
+  renderServiciosHome();        // ← nueva
+  renderInstalaciones();
+  renderInstalacionesHome(); 
 });
+
+/* Servicios destacados en el Inicio (ids de serviciosData, en este orden) */
+var serviciosInicio = ['endoscopia', 'colonoscopia', 'balon', 'consulta-gastro'];
+
+function renderServiciosHome() {
+  var lista = serviciosInicio.map(function(id) {
+    return serviciosData.filter(function(s) { return s.id === id; })[0];
+  }).filter(Boolean);
+  renderServicios(lista, 'home-servicios-grid');
+}
+
+/* Vista previa de instalaciones en el Inicio (primeras 3 fotos de la galería) */
+function renderInstalacionesHome() {
+  var g = document.getElementById('home-inst-grid');
+  if (!g) return;
+  g.innerHTML = '';
+  instalacionesFotos.slice(0, 3).forEach(function(f) {
+    var b = document.createElement('button');
+    b.className = 'inst-item';
+    b.type = 'button';
+    b.onclick = function() { showSection('instalaciones'); };
+    b.innerHTML =
+      '<img src="' + escapeHtml(f.src) + '" alt="' + escapeHtml(f.titulo) + '" loading="lazy" />' +
+      '<span class="inst-item-cap">' + escapeHtml(f.titulo) + '</span>';
+    g.appendChild(b);
+  });
+}

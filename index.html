@@ -4,44 +4,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png"    href="unidad gastroenterológica.png" />
-  <title>Gastroenterólogo en Duitama | Unidad Gastroenterológica · Dr. Ricardo Carvajal</title>
-  <meta name="description" content="Especialistas en gastroenterología y medicina interna en Duitama, Boyacá. Endoscopia, colonoscopia, balón gástrico y prueba de aliento. Dr. Ricardo Andrés Carvajal Flechas. Clínica Tundama. Agenda tu cita: 312 582 4128." />
-  <meta name="keywords"    content="gastroenterólogo Duitama, gastroenterología Boyacá, endoscopia Duitama, colonoscopia Duitama, balón gástrico Boyacá, médico digestivo Duitama, Dr Carvajal gastroenterólogo, Clínica Tundama gastroenterología" />
+    <title>Gastroenterólogo en Duitama | Unidad de Gastroenterología Carvajal</title>
+  <meta name="description" content="Gastroenterología, medicina interna y endoscopia en Duitama, Boyacá. Colonoscopia, balón gástrico y prueba de aliento. Agenda tu cita: 312 582 4128." />
   <meta name="author"      content="Dr. Ricardo Andrés Carvajal Flechas" />
   <meta name="robots"      content="index, follow" />
-  <link rel="canonical"    href="https://TUDOMINIO.com" />
+  <link rel="canonical"    href="https://gastroenterologiacarvajal.online/" />
 
   <!-- ══ OPEN GRAPH (WhatsApp, Facebook, LinkedIn) ══════════ -->
   <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://TUDOMINIO.com" />
-  <meta property="og:title"       content="Gastroenterólogo en Duitama | Dr. Ricardo Carvajal" />
+  <meta property="og:url"         content="https://gastroenterologiacarvajal.online/" />
+  <meta property="og:title"       content="Gastroenterólogo en Duitama | Unidad de Gastroenterología Carvajal" />
   <meta property="og:description" content="Atención especializada en gastroenterología, endoscopia y colonoscopia en Duitama, Boyacá. Agenda tu cita por WhatsApp." />
-  <meta property="og:image"       content="https://TUDOMINIO.com/assets/img/doctor.png" />
+  <meta property="og:image"       content="https://gastroenterologiacarvajal.online /assets/img/og-inicio.jpg" />
   <meta property="og:locale"      content="es_CO" />
 
   <!-- ══ SCHEMA — Datos estructurados para Google ═══════════ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MedicalBusiness",
-    "name": "Unidad Gastroenterológica Duitama",
+    "@type": "MedicalClinic",
+    "name": "Unidad de Gastroenterología Carvajal",
     "description": "Especialistas en gastroenterología, medicina interna y endoscopia digestiva en Duitama, Boyacá.",
-    "url": "https://TUDOMINIO.com",
+    "url": "https://gastroenterologiacarvajal.online/",
     "telephone": "+573125824128",
-    "image": "https://TUDOMINIO.com/assets/img/doctor.png",
+    "image": "https://gastroenterologiacarvajal.online/assets/img/og-inicio.jpg",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Calle 13 #14-33",
+      "streetAddress": "Durdan Centro Empresarial, Calle 17 #15-44",
       "addressLocality": "Duitama",
       "addressRegion": "Boyacá",
       "addressCountry": "CO"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 5.8281,
-      "longitude": -73.0297
-    },
+    "areaServed": "Duitama, Boyacá",
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61573643519568",
+      "https://www.instagram.com/unidadgastroduitama/"
+    ],
     "medicalSpecialty": "Gastroenterology",
     "employee": {
       "@type": "Physician",
@@ -82,15 +81,16 @@
   ══════════════════════════════════════ -->
   <nav class="nav">
     <div class="nav-logo">
-      Unidad <span>Gastroenterológica</span> Carvajal
+      Unidad de <span>Gastroenterología</span> Carvajal
       <small>Duitama · Boyacá</small>
     </div>
-    <div class="nav-tabs">
-      <button class="nav-tab active" onclick="showSection('presentacion', this)">Inicio</button>
-       <button class="nav-tab"        onclick="showSection('equipo', this)">Equipo médico</button>
-      <button class="nav-tab"        onclick="showSection('servicios', this)">Servicios</button>
-      <button class="nav-tab"        onclick="showSection('agendamiento', this)">Agendar cita</button>
-    </div>
+  <div class="nav-tabs">
+    <button class="nav-tab active" data-section="presentacion" onclick="showSection('presentacion', this)">Inicio</button>
+    <button class="nav-tab" data-section="equipo" onclick="showSection('equipo', this)">Equipo médico</button>
+    <button class="nav-tab" data-section="servicios" onclick="showSection('servicios', this)">Servicios</button>
+    <button class="nav-tab" data-section="instalaciones" onclick="showSection('instalaciones', this)">Nuestras instalaciones</button>
+    <button class="nav-tab" data-section="agendamiento" onclick="showSection('agendamiento', this)">Agendar cita</button>
+</div>
   </nav>
 
 
@@ -100,30 +100,41 @@
   <div id="presentacion" class="section active">
 
     <!-- Hero principal -->
-    <div class="hero">
-      <svg class="hero-bg" viewBox="0 0 900 340" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <ellipse cx="450" cy="170" rx="220" ry="110" fill="none" stroke="#fff" stroke-width="1.5"/>
-        <path d="M450 60 C370 60 310 110 310 170 C310 230 370 280 450 280 C530 280 590 230 590 170 C590 110 530 60 450 60Z" fill="none" stroke="#fff" stroke-width="1"/>
-        <path d="M370 140 Q400 165 430 152 Q465 136 495 158 Q520 175 545 162" fill="none" stroke="#fff" stroke-width="1" stroke-dasharray="5 3"/>
-        <circle cx="260" cy="110" r="50" fill="none" stroke="#fff" stroke-width="1"/>
-        <circle cx="640" cy="110" r="50" fill="none" stroke="#fff" stroke-width="1"/>
-        <line x1="310" y1="110" x2="385" y2="138" stroke="#fff" stroke-width="0.8"/>
-        <line x1="590" y1="110" x2="515" y2="138" stroke="#fff" stroke-width="0.8"/>
-        <circle cx="450" cy="320" r="25" fill="none" stroke="#fff" stroke-width="0.8"/>
-        <line x1="450" y1="280" x2="450" y2="295" stroke="#fff" stroke-width="0.8"/>
-      </svg>
+<div class="hero-split">
+  <div class="hero-split-text">
+    <div class="hero-badge">Gastroenterología · Medicina Interna · Endoscopia</div>
+    <h1>Cuidamos tu salud<br><em>digestiva</em> con excelencia</h1>
+    <p class="hero-sub">Diagnóstico oportuno, procedimientos especializados y acompañamiento humano para tu bienestar.</p>
 
-      <div class="hero-badge">Gastroenterología · Medicina Interna · Endoscopia</div>
-      <h1>Cuidamos tu salud<br><em>digestiva</em> con excelencia</h1>
-      <p class="hero-sub">Diagnóstico oportuno, procedimientos especializados y acompañamiento humano para tu bienestar.</p>
-      <button class="hero-cta" onclick="showSection('agendamiento', document.querySelectorAll('.nav-tab')[2])">
-        <i class="ti ti-calendar-plus" aria-hidden="true"></i> Agenda tu cita
+    <div class="hero-actions">
+      <a class="btn-wa" target="_blank" rel="noopener"
+         href="https://wa.me/573125824128?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20la%20Unidad%20Gastroenterol%C3%B3gica.">
+        <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Agendar por WhatsApp
+      </a>
+      <button class="btn-ghost" onclick="showSection('servicios')">
+        Ver servicios <i class="ti ti-arrow-right" aria-hidden="true"></i>
       </button>
     </div>
 
+    <ul class="hero-points">
+      <li><i class="ti ti-check" aria-hidden="true"></i> Procedimientos en un solo lugar</li>
+      <li><i class="ti ti-check" aria-hidden="true"></i> Atención con previa cita</li>
+      <li><i class="ti ti-check" aria-hidden="true"></i> Durdan Centro Empresarial, Calle 17 #15-44, Duitama</li>
+    </ul>
+  </div>
+
+  <figure class="hero-split-photo">
+    <img src="assets/img/foto_doctor.jpg" alt="Dr. Ricardo Andrés Carvajal Flechas" />
+    <figcaption>
+      <strong>Dr. Ricardo Carvajal</strong>
+      <span>Gastroenterología · Medicina Interna</span>
+    </figcaption>
+  </figure>
+</div>
+
     <!-- Barra de ubicación -->
     <div class="location-bar">
-  <div class="loc-item"><i class="ti ti-map-pin"></i> Clínica Tundama, Duitama</div>
+  <div class="loc-item"><i class="ti ti-map-pin"></i> Durdan Centro Empresarial, Calle 17 #15-44, Duitama</div>
   <div class="loc-item"><i class="ti ti-phone"></i> 312 582 4128</div>
   <div class="loc-item"><i class="ti ti-clock"></i> Atención con previa cita</div>
 
@@ -136,80 +147,145 @@
   </a>
 </div>
 
-    <!-- Contenido central -->
-    <div class="content-section">
+    <!-- ══════════════════════════════════════
+         CONTENIDO DEL INICIO
+    ══════════════════════════════════════ -->
 
-      <!-- Quiénes somos -->
-      <div class="section-label">Quiénes somos</div>
-      <h2 class="section-title">Una unidad especializada en tu salud digestiva</h2>
-      <div class="divider"></div>
-      <p class="section-body">
-        Somos una unidad especializada en la prevención, diagnóstico y tratamiento de enfermedades
-        del sistema digestivo. Ofrecemos atención integral en gastroenterología, medicina interna
-        y endoscopia digestiva, con procedimientos avanzados disponibles en un solo lugar.
-      </p>
-
-      <!-- Misión -->
-      <div class="mission-block">
-        <p>Brindar atención especializada mediante diagnóstico oportuno, procedimientos de alta
-        calidad y acompañamiento humano, contribuyendo al bienestar y calidad de vida de cada paciente.</p>
-      </div>
-
-      <!-- Tarjeta del doctor -->
-      <div class="doctor-card">
-        <div class="doctor-avatar">
-    <img src="assets/img/foto doctor.png" alt="Dr. Ricardo Carvajal" />
+    <!-- Servicios destacados -->
+    <section class="home-block">
+      <div class="home-wrap">
+        <div class="section-label">Lo que hacemos</div>
+        <h2 class="section-title">Procedimientos y consultas especializadas</h2>
+        <div class="services-grid home-servicios-grid" id="home-servicios-grid"></div>
+        <div class="home-more">
+          <button class="btn-link" onclick="showSection('servicios')">
+            Ver todos los servicios <i class="ti ti-arrow-right" aria-hidden="true"></i>
+          </button>
         </div>
-        <div class="doctor-info">
-          <h3>Dr. Ricardo Andrés Carvajal Flechas</h3>
-          <div class="title-tag">Médico · Especialista en Medicina Interna · Especialista en Gastroenterología</div>
-          <p>Jefe de Servicio en hospitales de Boyacá y cofundador de la unidad. Amplia experiencia
-          en endoscopia digestiva, colonoscopia, polipectomías, control de sangrado y manejo de
-          enfermedades gastrointestinales.</p>
-          <div class="pill-list">
-            <span class="pill">Endoscopia digestiva</span>
-            <span class="pill">Colonoscopia preventiva</span>
-            <span class="pill">Cáncer de colon</span>
-            <span class="pill">Cáncer gástrico</span>
-            <span class="pill">Balón gástrico</span>
+      </div>
+    </section>
+
+    <!-- Quiénes somos -->
+    <section class="home-block home-block--alt">
+      <div class="home-wrap about-split">
+        <div>
+          <div class="section-label">Quiénes somos</div>
+          <h2 class="section-title">Una unidad especializada en tu salud digestiva</h2>
+          <p class="section-body">
+            Prevención, diagnóstico y tratamiento de enfermedades del sistema digestivo:
+            gastroenterología, medicina interna y endoscopia en un solo lugar.
+          </p>
+        </div>
+        <div class="mission-block">
+          <div class="section-label">Nuestra misión</div>
+          <p>Brindar atención especializada mediante diagnóstico oportuno, procedimientos de alta
+          calidad y acompañamiento humano, contribuyendo al bienestar y calidad de vida de cada paciente.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipo -->
+    <section class="home-block">
+      <div class="home-wrap">
+        <div class="section-label">Quiénes te atienden</div>
+        <h2 class="section-title">Nuestro equipo médico</h2>
+
+        <div class="team-grid">
+          <article class="team-card">
+            <img src="assets/img/Foto ricardo.jpg" alt="Dr. Ricardo Andrés Carvajal Flechas" />
+            <div class="team-card-body">
+              <h3>Dr. Ricardo Andrés Carvajal Flechas</h3>
+              <p class="team-role">Medicina Interna · Gastroenterología</p>
+              <p class="team-desc">Cofundador de la unidad. Experiencia en endoscopia digestiva, colonoscopia, polipectomías y prevención del cáncer digestivo.</p>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <img src="assets/img/Foto carolina.jpg" alt="Dra. Carolina Garzón" />
+            <div class="team-card-body">
+              <h3>Dra. Carolina Garzón</h3>
+              <p class="team-role">Medicina Interna · Sedación</p>
+              <p class="team-desc">Atención integral del paciente adulto con enfermedades crónicas, con enfoque en diagnóstico clínico y prevención.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="home-more">
+          <button class="btn-link" onclick="showSection('equipo')">
+            Conocer al equipo completo <i class="ti ti-arrow-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Por qué elegirnos -->
+    <section class="home-block home-block--alt">
+      <div class="home-wrap">
+        <div class="section-label">Por qué elegirnos</div>
+        <h2 class="section-title">Diferenciales de la unidad</h2>
+
+        <div class="why-grid">
+          <div class="why-item">
+            <div class="why-icon"><i class="ti ti-stethoscope" aria-hidden="true"></i></div>
+            <p>Atención especializada en salud digestiva con enfoque integral</p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon"><i class="ti ti-building-hospital" aria-hidden="true"></i></div>
+            <p>Procedimientos diagnósticos y terapéuticos en un mismo lugar</p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon"><i class="ti ti-shield-check" aria-hidden="true"></i></div>
+            <p>Enfoque preventivo para detección temprana de cáncer digestivo</p>
+          </div>
+          <div class="why-item">
+            <div class="why-icon"><i class="ti ti-heart-handshake" aria-hidden="true"></i></div>
+            <p>Educación al paciente y acompañamiento profesional continuo</p>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Diferenciales -->
-      <div class="section-label">Por qué elegirnos</div>
-      <h2 class="section-title section-title--sm">Diferenciales de la unidad</h2>
-      <div class="diff-grid">
-        <div class="diff-item">
-          <div class="diff-icon"><i class="ti ti-stethoscope"     aria-hidden="true"></i></div>
-          <p>Atención especializada en salud digestiva con enfoque integral</p>
-        </div>
-        <div class="diff-item">
-          <div class="diff-icon"><i class="ti ti-building-hospital" aria-hidden="true"></i></div>
-          <p>Procedimientos diagnósticos y terapéuticos en un mismo lugar</p>
-        </div>
-        <div class="diff-item">
-          <div class="diff-icon"><i class="ti ti-shield-check"    aria-hidden="true"></i></div>
-          <p>Enfoque preventivo para detección temprana de cáncer digestivo</p>
-        </div>
-        <div class="diff-item">
-          <div class="diff-icon"><i class="ti ti-heart-handshake" aria-hidden="true"></i></div>
-          <p>Educación al paciente y acompañamiento profesional continuo</p>
+    <!-- Vista previa de instalaciones -->
+    <section class="home-block">
+      <div class="home-wrap">
+        <div class="section-label">Nuestras instalaciones</div>
+        <h2 class="section-title">Conoce dónde te atendemos</h2>
+        <div class="inst-grid" id="home-inst-grid"></div>
+        <div class="home-more">
+          <button class="btn-link" onclick="showSection('instalaciones')">
+            Ver más fotos y videos <i class="ti ti-arrow-right" aria-hidden="true"></i>
+          </button>
         </div>
       </div>
+    </section>
 
-    </div><!-- /content-section -->
+    <!-- Banner final -->
+    <section class="cta-final">
+      <div class="home-wrap cta-final-inner">
+        <h2>¿Listo para agendar tu cita?</h2>
+        <p>Escríbenos por WhatsApp y te confirmamos tu cita según la disponibilidad de agenda.</p>
+        <div class="hero-actions cta-final-actions">
+          <a class="btn-wa" target="_blank" rel="noopener"
+             href="https://wa.me/573125824128?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20la%20Unidad%20Gastroenterol%C3%B3gica.">
+            <i class="ti ti-brand-whatsapp" aria-hidden="true"></i> Agendar por WhatsApp
+          </a>
+          <button class="btn-ghost" onclick="showSection('agendamiento')">
+            Usar el formulario <i class="ti ti-arrow-right" aria-hidden="true"></i>
+          </button>
+        </div>
+        <p class="cta-final-addr"><i class="ti ti-map-pin" aria-hidden="true"></i> Durdan Centro Empresarial · Calle 17 #15-44, Duitama · 312 582 4128</p>
+      </div>
+    </section>
 
     <footer class="footer">
-  <p>© 2025 Unidad Gastroenterológica <span>Duitama</span> · Clínica Tundama · Calle 13 #14-33</p>
-  <div class="footer-redes">
-    <a href="https://www.facebook.com/profile.php?id=61573643519568&locale=es_LA"   target="_blank"><i class="ti ti-brand-facebook"></i></a>
-    <a href="https://www.instagram.com/unidadgastroduitama/" target="_blank"><i class="ti ti-brand-instagram"></i></a>
-    <a href="https://wa.me/573125824128"            target="_blank"><i class="ti ti-brand-whatsapp"></i></a>
-  </div>
+      <p>© 2026 Unidad de Gastroenterología Carvajal <span>Duitama</span> · Durdan Centro Empresarial, Calle 17 #15-44, Duitama</p>
+      <div class="footer-redes">
+        <a href="https://www.facebook.com/profile.php?id=61573643519568&locale=es_LA" target="_blank" rel="noopener"><i class="ti ti-brand-facebook"></i></a>
+        <a href="https://www.instagram.com/unidadgastroduitama/" target="_blank" rel="noopener"><i class="ti ti-brand-instagram"></i></a>
+        <a href="https://wa.me/573125824128" target="_blank" rel="noopener"><i class="ti ti-brand-whatsapp"></i></a>
+      </div>
     </footer>
   </div><!-- /presentacion -->
-
 
   <!-- ══════════════════════════════════════
      SECCIÓN · EQUIPO MÉDICO
@@ -240,7 +316,7 @@
         <p class="medico-bio">
           El Dr. Ricardo Andrés Carvajal Flechas es médico cirujano con doble especialización en
           Medicina Interna y Gastroenterología, con más de una década de experiencia en el manejo
-          de enfermedades del sistema digestivo. Cofundador de la Unidad Gastroenterológica de
+          de enfermedades del sistema digestivo. Cofundador de la Unidad de Gastroenterología Carvajal en
           Duitama, ha dedicado su carrera a brindar atención especializada de alta calidad en
           la región de Boyacá.
         </p>
@@ -289,7 +365,7 @@
               <div class="timeline-punto"></div>
               <div class="timeline-contenido">
                 <strong>Jefe de Servicio de Medicina Interna</strong>
-                <p>Hospital Regional de Duitama · Boyacá — <em>por confirmar fechas</em></p>
+                <p>Hospital Regional de Duitama · Boyacá </p>
               </div>
             </div>
 
@@ -297,7 +373,14 @@
               <div class="timeline-punto"></div>
               <div class="timeline-contenido">
                 <strong>Especialista en Gastroenterología</strong>
-                <p>Clínica Tundama · Duitama — <em>por confirmar fechas</em></p>
+                <p>Clínica Tundama · Duitama </p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-punto"></div>
+              <div class="timeline-contenido">
+                <strong>Especialista en Gastroenterología</strong>
+                <p>Hospital Regional de Duitama · Boyacá </p>
               </div>
             </div>
 
@@ -305,7 +388,7 @@
               <div class="timeline-punto"></div>
               <div class="timeline-contenido">
                 <strong>Cofundador</strong>
-                <p>Unidad Gastroenterológica · Duitama, Boyacá</p>
+                <p>Unidad de Gastroenterología · Duitama, Boyacá</p>
               </div>
             </div>
 
@@ -332,79 +415,71 @@
     <div class="equipo-separador"></div>
 
     <!-- ── DOCTORA CAROLINA ────────────────────────── -->
-    <div class="medico-card medico-card--reverse">
-      <div class="medico-foto-wrap">
-        <img src="assets/img/Foto carolina.jpg" alt="Dra. Carolina Garzón" class="medico-foto" />
-        <div class="medico-badge-foto">Especialista · por confirmar</div>
-      </div>
+<div class="medico-card medico-card--reverse">
+  <div class="medico-foto-wrap">
+    <img src="assets/img/Foto carolina.jpg" alt="Dra. Carolina Garzón" class="medico-foto" />
+    <div class="medico-badge-foto">Especialista en Medicina Interna</div>
+  </div>
 
-      <div class="medico-info">
-        <div class="section-label">Especialista</div>
-        <h3 class="medico-nombre">Dra. Carolina Garzón</h3>
-        <div class="medico-divider"></div>
+  <div class="medico-info">
+    <div class="section-label">Especialista</div>
+    <h3 class="medico-nombre">Dra. Carolina Garzón</h3>
+    <div class="medico-divider"></div>
 
-        <p class="medico-bio">
-          La Dra. Carolina Garzón es médica especialista con amplia experiencia en su área de
-          formación. Su compromiso con la atención humanizada y el diagnóstico oportuno la
-          convierten en una pieza fundamental del equipo de la Unidad Gastroenterológica.
-          <em>(Descripción completa por confirmar — reemplaza este texto con la información
-          que te suministre la doctora.)</em>
-        </p>
+    <p class="medico-bio">
+      La Dra. Carolina Garzón es médica y cirujana, especialista en Medicina Interna y con
+      formación en sedación. Centra su práctica en la atención integral del paciente adulto
+      con enfermedades crónicas, con un enfoque en el diagnóstico clínico y la prevención.
+    </p>
 
-        <!-- Formación académica -->
-        <div class="medico-bloque">
-          <h4 class="medico-bloque-titulo"><i class="ti ti-school"></i> Formación académica</h4>
-          <div class="timeline">
+    <!-- Formación académica -->
+    <div class="medico-bloque">
+      <h4 class="medico-bloque-titulo"><i class="ti ti-school"></i> Formación académica</h4>
+      <div class="timeline">
 
-            <div class="timeline-item">
-              <div class="timeline-punto"></div>
-              <div class="timeline-contenido">
-                <span class="timeline-year">20XX</span>
-                <strong>Título de pregrado · por confirmar</strong>
-                <p>Universidad · por confirmar</p>
-              </div>
-            </div>
-
-            <div class="timeline-item">
-              <div class="timeline-punto"></div>
-              <div class="timeline-contenido">
-                <span class="timeline-year">20XX</span>
-                <strong>Especialización · por confirmar</strong>
-                <p>Institución · por confirmar</p>
-              </div>
-            </div>
-
+        <div class="timeline-item">
+          <div class="timeline-punto"></div>
+          <div class="timeline-contenido">
+            <span class="timeline-year">2015</span>
+            <strong>Médica y Cirujana</strong>
+            <p>Pregrado</p>
           </div>
         </div>
 
-        <!-- Experiencia -->
-        <div class="medico-bloque">
-          <h4 class="medico-bloque-titulo"><i class="ti ti-briefcase"></i> Experiencia profesional</h4>
-          <div class="timeline">
-
-            <div class="timeline-item">
-              <div class="timeline-punto"></div>
-              <div class="timeline-contenido">
-                <strong>Cargo · por confirmar</strong>
-                <p>Institución · por confirmar</p>
-              </div>
-            </div>
-
+        <div class="timeline-item">
+          <div class="timeline-punto"></div>
+          <div class="timeline-contenido">
+            <span class="timeline-year">2019</span>
+            <strong>Especialista en Medicina Interna</strong>
+            <p>Especialización</p>
           </div>
         </div>
 
-        <!-- Áreas de interés -->
-        <div class="medico-bloque">
-          <h4 class="medico-bloque-titulo"><i class="ti ti-heart"></i> Áreas de interés</h4>
-          <div class="pill-list">
-            <span class="pill">Por confirmar</span>
-            <span class="pill">Por confirmar</span>
-            <span class="pill">Por confirmar</span>
+        <div class="timeline-item">
+          <div class="timeline-punto"></div>
+          <div class="timeline-contenido">
+            <span class="timeline-year">2025</span>
+            <strong>Médica en sedación</strong>
+            <p>Especialización</p>
           </div>
         </div>
 
       </div>
     </div>
+
+    <!-- Áreas de interés -->
+    <div class="medico-bloque">
+      <h4 class="medico-bloque-titulo"><i class="ti ti-heart"></i> Áreas de interés</h4>
+      <div class="pill-list">
+        <span class="pill">Atención integral del adulto</span>
+        <span class="pill">Enfermedades crónicas</span>
+        <span class="pill">Diagnóstico clínico</span>
+        <span class="pill">Prevención</span>
+      </div>
+    </div>
+
+  </div>
+</div>
 
     <!-- Separador -->
     <div class="equipo-separador"></div>
@@ -447,7 +522,7 @@
   </div><!-- /equipo-content -->
 
   <footer class="footer">
-    <p>© 2025 Unidad Gastroenterológica <span>Duitama</span> · Clínica Tundama</p>
+    <p>© 2026 Unidad  De Gastroenterología <span>Duitama</span> · Durdan Centro Empresarial, Calle 17 #15-44</p>
   </footer>
 </div><!-- /equipo -->
 
@@ -493,7 +568,7 @@
   </div>
 
   <footer class="footer">
-    <p>© 2025 Unidad Gastroenterológica <span>Duitama</span> · Clínica Tundama</p>
+    <p>© 2026 Unidad  De Gastroenterología <span>Duitama</span> · Durdan Centro Empresarial, Calle 17 #15-44</p>
   </footer>
 </div><!-- /servicios -->
 
@@ -527,7 +602,7 @@
         </div>
         <div class="meta-item">
           <i class="ti ti-building-hospital" aria-hidden="true"></i>
-          <span>Clínica Tundama, Duitama</span>
+          <span>Durdan Centro Empresarial, Calle 17 #15-44, Duitama</span>
         </div>
         <div class="meta-item">
           <i class="ti ti-user-check" aria-hidden="true"></i>
@@ -546,6 +621,41 @@
     </div>
 
   </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     SECCIÓN · NUESTRAS INSTALACIONES
+══════════════════════════════════════ -->
+<div id="instalaciones" class="section">
+
+  <div class="inst-hero">
+    <div class="hero-badge">Conoce dónde te atendemos</div>
+    <h2>Nuestras instalaciones</h2>
+    <p>Espacios cómodos, seguros y con tecnología para tu atención en la Unidad de Gastroenterología Carvajal</p>
+  </div>
+
+  <div class="inst-content">
+    <div class="section-label">Galería</div>
+    <h3 class="section-title section-title--sm">Fotos de la unidad</h3>
+    <div class="inst-grid" id="inst-fotos"></div>
+
+    <div class="section-label inst-label-gap">Videos</div>
+    <h3 class="section-title section-title--sm">Recorrido en video</h3>
+    <div class="inst-videos" id="inst-videos"></div>
+  </div>
+
+  <footer class="footer">
+    <p>© 2026 Unidad  De Gastroenterología <span>Duitama</span> · Durdan Centro Empresarial, Calle 17 #15-44</p>
+  </footer>
+</div><!-- /instalaciones -->
+
+<!-- Visor ampliado (fotos y videos) -->
+<div class="lightbox" id="lightbox" onclick="cerrarLightbox(event)" aria-hidden="true">
+  <button class="lightbox-close" onclick="cerrarLightbox()" aria-label="Cerrar"><i class="ti ti-x"></i></button>
+  <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1, event)" aria-label="Anterior"><i class="ti ti-chevron-left"></i></button>
+  <div class="lightbox-stage" id="lightbox-stage"></div>
+  <button class="lightbox-nav lightbox-next" onclick="navLightbox(1, event)" aria-label="Siguiente"><i class="ti ti-chevron-right"></i></button>
+  <div class="lightbox-caption" id="lightbox-caption"></div>
 </div>
 
   <!-- ══════════════════════════════════════
@@ -604,8 +714,8 @@
 
       <!-- Info de contacto -->
       <div class="schedule-info">
-        <div class="sched-item"><i class="ti ti-map-pin"           aria-hidden="true"></i> Calle 13 #14-33, Duitama</div>
-        <div class="sched-item"><i class="ti ti-building-hospital" aria-hidden="true"></i> Clínica Tundama</div>
+        <div class="sched-item"><i class="ti ti-map-pin"           aria-hidden="true"></i> Durdan Centro Empresarial, Calle 17 #15-44, Duitama</div>
+        <div class="sched-item"><i class="ti ti-building-hospital" aria-hidden="true"></i> Unidad de Gastroenterología Carvajal</div>
         <div class="sched-item"><i class="ti ti-phone"             aria-hidden="true"></i> 312 582 4128</div>
         <div class="sched-item"><i class="ti ti-clock"             aria-hidden="true"></i> Atención con cita previa</div>
       </div>
@@ -618,7 +728,7 @@
     </div><!-- /schedule-content -->
 
     <footer class="footer">
-      <p>© 2025 Unidad Gastroenterológica <span>Duitama</span> · Boyacá, Colombia</p>
+      <p>© 2026 Unidad de Gastroenterología Carvajal <span>Duitama</span> · Boyacá, Colombia</p>
     </footer>
   </div><!-- /agendamiento -->
 
